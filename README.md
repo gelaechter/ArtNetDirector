@@ -13,7 +13,7 @@
   <p align="center">
     A Client-Server based application for the selective redirection of Art-Net Packets.
     <br />
-    <a href="https://github.com/gelaechter/ArtNetDirector"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/gelaechter/ArtNetDirector/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/gelaechter/ArtNetDirector/issues">Report Bug</a>
