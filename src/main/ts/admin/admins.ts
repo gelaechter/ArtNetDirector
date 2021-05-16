@@ -82,6 +82,7 @@ function processJson(message: MessageEvent) {
         });
         return;
     }
+    if (data[0] === "TRANSMITTING") return;
 
     $(".nodeTable tbody").empty();
     var nodes = data["nodes"];
