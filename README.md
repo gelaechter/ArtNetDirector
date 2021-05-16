@@ -78,7 +78,7 @@ Create a uber jar using gradle:
 3. All users set their Art-Net output to the IP address of the host server.
 4. The users can then toggle to which nodes they want to transmit their Art-Net packets in the web user panel. (address also found in the applications console)
 
-_For more in-depth explanations refer to the [Documentation](https://example.com)_
+_For more in-depth explanations refer to the [Documentation](https://github.com/gelaechter/ArtNetDirector/wiki)_
 
 ## Contributing
 
