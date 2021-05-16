@@ -88,22 +88,26 @@ function processJson(message: MessageEvent) {
     var nodes = data["nodes"];
     displayNodes(nodes);
 
-    $(".userTable tbody").empty();
-    var userMap = data["userMap"];
-    displayUsers(userMap, nodes);
-
     $(".bannedUserTable tbody").empty();
     var bannedUsers = data["settings"]["ipBlacklist"];
     displayBannedUsers(bannedUsers);
+
+    $(".userTable tbody").empty();
+    var userMap = data["userMap"];
+    displayUsers(userMap, nodes, bannedUsers);
+
 }
 
-function displayUsers(userMap: any, nodes: any) {
+function displayUsers(userMap: any, nodes: any, ipBlacklist: string[]) {
     for (const context in userMap) {
         var user = userMap[context];
         var connected = user["connected"];
         var userName = user["userName"];
         var ip = user["ip"];
         var toggledNodes = user["toggled"];
+
+        //don't display banned users
+        if(ipBlacklist.includes(ip)) continue;
 
         //Write every active node into cell
         var i = 0;
