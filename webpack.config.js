@@ -2,10 +2,10 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: {
-        "admin/admin_script": path.resolve(__dirname, 'src/main/ts/admin/admin_script.ts'),
-        "user/user_script": path.resolve(__dirname, 'src/main/ts/user/user_script.ts'),
+        "admin/admins": path.resolve(__dirname, 'src/main/ts/admin/admins.ts'),
+        "user/users": path.resolve(__dirname, 'src/main/ts/user/users.ts'),
         "fallback/utils": path.resolve(__dirname, 'src/main/ts/lib/utils.ts')
     },
     output: {
