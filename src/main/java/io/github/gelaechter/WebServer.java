@@ -73,7 +73,6 @@ public class WebServer {
 
                 ctx.send(toJsonArray("CLIENTIP", ip));
                 sendUpdates();
-                logger.info("Connected user with ip {}", ip);
             });
 
             ws.onClose(ctx -> {
@@ -90,7 +89,6 @@ public class WebServer {
 
                 ArtNetDirector.userMap.put(ip, user);
                 sendUpdates();
-                logger.info("Disconnected user with ip {}", ip);
             });
 
             ws.onMessage(ctx -> {
