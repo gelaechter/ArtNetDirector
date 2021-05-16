@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="***REMOVED*** ***REMOVED***">
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="user_layout.css">
+        <title>ArtNet Director</title>
+    </head>
+    <body>
+        <!--NavBar-->
+        <ul class="navBar">
+            <li>
+                <a class="navtext">ArtNet Director</a>
+            </li>
+            <li style="float:right; border-right: 1px solid #bbb; border-left: 1px solid #bbb;">
+                <input type="text" id="nameInput" class="input" i18n-placeholder="username" placeholder="Benutzer Name" enterid="nameButton">
+                <button id="nameButton" onclick="setUserName()" type="button" class="input addButton" style="margin-left: 0px;">✔️</button>
+            </li>
+        </ul>
+
+        <div class="main">
+            <div>
+                <ul id="sidebar" class="sidebar"></ul>
+            </div>
+            <div id="container" class="slideshow-container">
+                <h1 style="width: 100%; height: 100%; text-align: center;" i18n-key="">Es sind momentan keine Knoten verfügbar</h1>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="user_script.js"></script>
+    </body>
+</html>

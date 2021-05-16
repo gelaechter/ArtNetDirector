@@ -1,0 +1,88 @@
+.main {
+    display: flex;
+    flex-grow: 1;
+    min-height: 0;
+    flex-flow: column;
+}
+
+.edit-button {
+    background: transparent;
+    border: none !important;
+    float: right;
+    font-size: 1.5em;
+    line-height: 0.8em;
+    cursor: pointer;
+}
+
+.slideshow-container {
+    display: flex;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.slide {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+}
+
+.tabBar {}
+
+.footer {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+.addNodeForm {
+    flex-flow: row;
+    display: flex;
+}
+
+.addNodeForm input, .addNodeForm button {
+    flex-grow: 1;
+}
+
+.log {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/*Drop Down*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    display: block;
+    background-color: #292a2c;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.settings-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.setting {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    min-width: 500px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px -0px #000;
+    border-radius: 5px;
+}
