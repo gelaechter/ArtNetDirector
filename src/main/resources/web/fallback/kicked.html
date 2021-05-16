@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Samuel Pommer">
+        <link rel="stylesheet" href="../styles.css">
+        <title>ArtNet Director</title>
+    </head>
+
+    <body>
+
+        <ul class="navBar">
+            <li>
+                <a class="navtext">ArtNet Director</a>
+            </li>
+        </ul>
+
+        <div style="top: 50%;left: 50%;transform: translate(-50%, -50%) ;position: absolute;display: flex; flex-flow: column;">
+            <h2 i18n-key="fallback.you_have_been_removed">You have been removed by an administrator!</h2>
+            <input type="button" class="button" i18n-key="fallback.return_to_main_page" onclick="window.location.href = 'http://' + window.location.host"/>
+        </div>
+
+        <script type="module" src="./utils.js"></script>
+    </body>
+
+</html>

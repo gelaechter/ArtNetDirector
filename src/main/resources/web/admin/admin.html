@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author">
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="admin_layout.css">
+        <title>ArtNet Director</title>
+    </head>
+
+    <body>
+        <form method="post" action="" onsubmit="return false;" id="fileForm" enctype="multipart/form-data" style="position: fixed; top: -100em">
+            <input id="fileInput" type="file" name="files">
+        </form>
+        <!--NavBar-->
+        <ul class="navBar">
+            <li>
+                <a class="navtext">ArtNet Director</a>
+            </li>
+        </ul>
+
+        <ul class="tabBar">
+            <li class="dropdown">
+                <a class="dropbtn">
+                    <span i18n-key="admin.tabs.file">&#128193; File</span></a>
+                <div class="dropdown-content">
+                    <a onclick="send('[REQUESTDATA]')" i18n-key="admin.file.save">Save</a>
+                    <a onclick="loadFromFile()" i18n-key="admin.file.load">Load</a>
+                </div>
+            </li>
+            <li class="tab">
+                <a onclick="currentSlide(1)">
+                    <span i18n-key="admin.tabs.users">&#128187; Users</span></a>
+            </li>
+            <li class="tab">
+                <a onclick="currentSlide(2)">
+                    <span i18n-key="admin.tabs.nodes">&#128161; Nodes</span></a>
+            </li>
+            <li class="tab">
+                <a onclick="currentSlide(3); setLogNotification(false);">
+                    <span id="logSpan" i18n-key="admin.tabs.log">&#128195; Log</span></a>
+            </li>
+            <li class="tab">
+                <a onclick="currentSlide(4)">
+                    <span i18n-key="admin.tabs.settings">&#9881;&#65039; Settings</span></a>
+            </li>
+        </ul>
+
+        <div class="slideshow-container">
+            <div class="slide">
+                <b class="title" i18n-key="admin.users.users">Users</b>
+                <div class="tableFixHead">
+                    <table class="userTable">
+                        <thead>
+                            <tr>
+                                <th i18n-key="username">Username</th>
+                                <th i18n-key="ip_address">IP address</th>
+                                <th i18n-key="admin.users.transmitting_to_nodes">Transmitting to nodes</th>
+                                <th i18n-key="admin.users.remove">Remove</th>
+                                <th i18n-key="admin.users.ban">Ban</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="slide">
+                <b class="title" i18n-key="admin.nodes.nodes">Nodes</b>
+                <div class="tableFixHead">
+                    <table class="nodeTable">
+                        <thead>
+                            <tr>
+                                <th i18n-key="admin.nodes.name">Name</th>
+                                <th i18n-key="ip_address">IP Adress</th>
+                                <th i18n-key="admin.nodes.universe">Universe</th>
+                                <th i18n-key="admin.nodes.edit">Edit</th>
+                                <th i18n-key="admin.nodes.remove">Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="addNodeForm">
+                    <input type="text" class="input" id="nodeNameField" i18n-placeholder="admin.nodes.name" placeholder="Name" enterid="nodeIpField">
+                    <input type="text" class="input" id="nodeIpField" i18n-placeholder="ip_address" placeholder="IP address" enterid="nodeUniverseField">
+                    <input type="number" class="input" id="nodeUniverseField" i18n-placeholder="admin.nodes.universe" placeholder="Universe" min="0" max="255" enterid="nodeCreateButton">
+                    <button onclick="addNode()" type="button" class="input addButton" id="nodeCreateButton" i18n-key="admin.nodes.create">Create</button>
+                </div>
+            </div>
+            <div class="slide">
+                <b class="title" i18n-key="admin.log">Log</b>
+                <textarea class="input log" style="resize: none;" readonly="readonly"></textarea>
+            </div>
+            <div class="slide">
+                <b class="title" i18n-key="admin.settings.settings">Settings</b>
+                <div class="settings-container">
+                    <div class="tableFixHead setting">
+                        <h2 class="center-text" i18n-key="admin.settings.banned_users">&#128683; Banned Users</h2>
+                        <table class="bannedUserTable">
+                            <thead>
+                                <tr>
+                                    <th i18n-key="ip_address">IP address</th>
+                                    <th i18n-key="admin.settings.unban">Unban</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="setting">
+                        <h2 class="center-text" i18n-key="admin.settings.change_admin_password">&#128273; Change admin password</h2>
+                        <input type="password" class="input" id="password" i18n-placeholder="password" placeholder="Password" enterid="repeatPassword">
+                        <input type="password" class="input" id="repeatPassword" i18n-placeholder="admin.settings.repeat_password" placeholder="Repeat Password" enterid="passwordChangeButton">
+                        <button onclick="setPassword()" type="button" class="input addButton" id="passwordChangeButton" i18n-key="admin.settings.set_new_password">Set new password</button>
+                    </div>
+                    <div class="setting">
+                        <h2 class="center-text" i18n-key="admin.settings.port_settings">&#128268; Port Settings</h2>
+                        <label for="webPort" style="margin-left: 9px;">Web Port</label>
+                        <input type="number" class="input" id="webPort" placeholder="7000" value="7000">
+                        <button onclick="updatePorts()" type="button" class="input addButton" i18n-key="admin.settings.change_ports_and_restart">Change ports & restart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" src="admin_script.js"></script>
+    </body>
+
+</html>

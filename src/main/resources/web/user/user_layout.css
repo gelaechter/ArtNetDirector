@@ -1,0 +1,33 @@
+.main {
+    display: flex;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.slideshow-container {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    position: relative;
+}
+
+.nodeSlide {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    position: relative;
+}
+
+.sidebar{
+display: flex;
+flex-flow: column;
+height: 100%;
+overflow: hidden auto;
+}
+
+.footer {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    width: 100%;
+    text-align: center;
+}

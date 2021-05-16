@@ -1,0 +1,98 @@
+
+
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/gelaechter/ArtNetDirector">
+    <img src="/src/main/resources/banner.png" alt="Logo" width="400">
+  </a>
+
+<h1 align="center">ArtNet Director</h1>
+
+  <p align="center">
+    A Client-Server based application for the selective redirection of Art-Net Packets.
+    <br />
+    <a href="https://github.com/gelaechter/ArtNetDirector"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/gelaechter/ArtNetDirector/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/gelaechter/ArtNetDirector/issues">Request Feature</a>
+    ·
+    <a href="https://github.com/gelaechter/ArtNetDirector/issues">Ask a Question</a>
+
+  </p>
+</p>
+
+![ArtNet Director](./.github/preview.png)
+
+## About The Project
+ArtNet Director is a Client-Server based application, for the selective redirection of Art-Net packets.
+Its main purpose is to facilitate switching between multiple users when restricted to a limited amount of Art-Net nodes.
+It is operated using a web interface meaning it runs as a server on another computer, which can then be accessed by other computers in a local network using a web browser.
+
+## Installation
+
+You'll need [Java](https://java.com/en/download/) installed on your machine to run this application.
+
+* Download the latest jar file from the releases
+* Put the jar file in a new directory
+* Run the jar file, e.g. by double clicking it or from your command line:
+``` sh
+java -jar ArtNetDirector.jar
+```
+
+In the console you'll find what to open in the web browser
+
+### Building from Source
+This project was built using the following things:
+* [Java](https://java.com/en/download/)
+* [Gradle](https://gradle.org/install/)
+* [npm](https://www.npmjs.com/get-npm)
+
+
+First, clone the repository and move into it:
+``` shell
+git clone https://github.com/gelaechter/ArtNetDirector && cd ArtNetDirector
+```
+
+Then install all npm packages, this also installs Webpack and TypeScript:
+```sh
+npm install
+```
+
+Run Webpack to compile TypeScript files: (this starts a watcher, stop it with ctrl+c)
+```sh
+webpack
+```
+
+Create a uber jar using gradle:
+```sh
+./gradlew shadowJar
+```
+
+## Usage
+1. You start the application on a computer.
+2. You configure nodes, their IP addresses etc. on the web administration panel. (address is found in the applications console)
+3. All users set their Art-Net output to the IP address of the host server.
+4. The users can then toggle to which nodes they want to transmit their Art-Net packets in the web user panel. (address also found in the applications console)
+
+_For more in-depth explanations refer to the [Documentation](https://example.com)_
+
+## Contributing
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See [LICENSE](https://github.com/gelaechter/ArtNetDirector/blob/master/LICENSE) for more information.
+
+## Acknowledgements
+
+* This project uses [Art-Net™](https://art-net.org.uk/) Designed by and Copyright Artistic Licence Holdings Ltd"
+* It also uses a fork of [artnet4j by cansik](https://github.com/cansik/artnet4j)

@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'application'
+    id "io.freefair.lombok" version "5.3.0"
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+    id "com.github.johnrengelman.shadow" version "7.0.0"
+}
+
+javafx {
+    modules = [ 'javafx.controls', "javafx.graphics" ]
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'io.javalin:javalin:3.13.5'
+    implementation 'org.eclipse.jetty.websocket:websocket-api:9.4.25.v20191220'
+    implementation 'com.github.gelaechter:artnet4j:master-SNAPSHOT'
+    implementation 'org.apache.commons:commons-lang3:3.11'
+    implementation 'org.slf4j:slf4j-simple:1.7.28'
+
+    //Gson for serialization... Jackson fails due to unknown reasons TODO: research this
+    implementation 'com.google.code.gson:gson:2.8.6'
+}
+
+sourceCompatibility = "8"
+group = 'io.github.gelaechter'
+version = '1.0.0'
+mainClassName = 'io.github.gelaechter.Main'
