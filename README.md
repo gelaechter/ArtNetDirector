@@ -96,3 +96,4 @@ Distributed under the MIT License. See [LICENSE](https://github.com/gelaechter/A
 
 * This project uses [Art-Net™](https://art-net.org.uk/) Designed by and Copyright Artistic Licence Holdings Ltd"
 * It also uses a fork of [artnet4j by cansik](https://github.com/cansik/artnet4j)
+* Special thanks to my CS teacher who not only came up with the idea but let me work on it during lessons
