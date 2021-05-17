@@ -276,5 +276,12 @@ gradle-app.setting
 **/build/
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,gradle,java,node,linux
+
 /bin/
 /settings.json
+/src/main/resources/web/admin/admin.js
+/src/main/resources/web/admin/admin.js.LICENSE.txt
+/src/main/resources/web/user/users.js
+/src/main/resources/web/user/users.js.LICENSE.txt
+/src/main/resources/web/fallback/utils.js
+/src/main/resources/web/fallback/utils.js.LICENSE.txt
