@@ -279,8 +279,8 @@ gradle-app.setting
 
 /bin/
 /settings.json
-/src/main/resources/web/admin/admin.js
-/src/main/resources/web/admin/admin.js.LICENSE.txt
+/src/main/resources/web/admin/admins.js
+/src/main/resources/web/admin/admins.js.LICENSE.txt
 /src/main/resources/web/user/users.js
 /src/main/resources/web/user/users.js.LICENSE.txt
 /src/main/resources/web/fallback/utils.js
