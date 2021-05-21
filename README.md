@@ -1,9 +1,10 @@
 
-
-
 <!-- PROJECT LOGO -->
-<br />
 <p align="center">
+  <a href="README.md">🇬🇧 English</a>
+  &nbsp;
+  <a href="README.de.md">🇩🇪 Deutsch</a>
+  </br></br>
   <a href="https://github.com/gelaechter/ArtNetDirector">
     <img src="/src/main/resources/banner.png" alt="Logo" width="400">
   </a>
@@ -11,7 +12,7 @@
 <h1 align="center">ArtNet Director</h1>
 
   <p align="center">
-    A Client-Server based application for the selective redirection of Art-Net Packets.
+    A client-server based application for the selective redirection of Art-Net packets.
     <br />
     <a href="https://github.com/gelaechter/ArtNetDirector/wiki"><strong>Explore the docs »</strong></a>
     <br />
@@ -28,7 +29,7 @@
 ![ArtNet Director](./.github/preview.png)
 
 ## About The Project
-ArtNet Director is a Client-Server based application, for the selective redirection of Art-Net packets.
+ArtNet Director is a client-server based application, for the selective redirection of Art-Net packets.
 Its main purpose is to facilitate switching between multiple users when restricted to a limited amount of Art-Net nodes.
 It is operated using a web interface meaning it runs as a server on another computer, which can then be accessed by other computers in a local network using a web browser.
 
@@ -54,7 +55,8 @@ This project was built using the following things:
 
 First, clone the repository and move into it:
 ``` shell
-git clone https://github.com/gelaechter/ArtNetDirector && cd ArtNetDirector
+git clone https://github.com/gelaechter/ArtNetDirector
+cd ArtNetDirector
 ```
 
 Then install all npm packages, this also installs Webpack and TypeScript:
@@ -62,21 +64,23 @@ Then install all npm packages, this also installs Webpack and TypeScript:
 npm install
 ```
 
-Run Webpack to compile TypeScript files: (this starts a watcher, stop it with ctrl+c)
+Run Webpack to transpile TypeScript files:
 ```sh
-webpack
+webpack --no-watch
 ```
 
-Create a uber jar using gradle:
+Create a uber jar using Gradle:
 ```sh
 ./gradlew shadowJar
 ```
 
 ## Usage
 1. You start the application on a computer.
-2. You configure nodes, their IP addresses etc. on the web administration panel. (address is found in the applications console)
+2. You configure nodes, their IP addresses etc. in the web admin interface.
+</br> (address is found in the applications console)
 3. All users set their Art-Net output to the IP address of the host server.
-4. The users can then toggle to which nodes they want to transmit their Art-Net packets in the web user panel. (address also found in the applications console)
+</br> (address also found in the applications console)
+4. The users can then toggle to which nodes they want to transmit their Art-Net packets in the web user interface.
 
 _For more in-depth explanations refer to the [Documentation](https://github.com/gelaechter/ArtNetDirector/wiki)_
 
@@ -94,6 +98,6 @@ Distributed under the MIT License. See [LICENSE](https://github.com/gelaechter/A
 
 ## Acknowledgements
 
-* This project uses [Art-Net™](https://art-net.org.uk/) Designed by and Copyright Artistic Licence Holdings Ltd"
-* It also uses a fork of [artnet4j by cansik](https://github.com/cansik/artnet4j)
+* This project uses [Art-Net™](https://art-net.org.uk/) Designed by and Copyright Artistic Licence Holdings Ltd
+* It also uses my fork of [artnet4j by cansik](https://github.com/cansik/artnet4j)
 * Special thanks to my CS teacher who not only came up with the idea but let me work on it during lessons
