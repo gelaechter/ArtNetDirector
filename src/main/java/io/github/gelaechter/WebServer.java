@@ -187,7 +187,7 @@ public class WebServer {
         //copy the admin set into a new set to prevent concurrent modification
         final Set<WsContext> receivingAdmins = new HashSet<>(adminSet);
         for (WsContext ctx : receivingAdmins) {
-            if(ctx == null) continue;
+            if (ctx == null) continue;
             if (authorizedAdminIps.contains(getIpByContext(ctx)) && ctx.session.isOpen()) {
                 ctx.send(toJsonArray(args));
             }
@@ -216,7 +216,7 @@ public class WebServer {
         final int WEBPORT = 1;
         final int USERNAME = 2;
 
-        if(ctx == null) return;
+        if (ctx == null) return;
 
         if (message[KEYWORD] != null) {
             //If the sender isn't authorized and isn't trying to authorize themselves, tell them to do that
@@ -327,8 +327,12 @@ public class WebServer {
                 case "TOGGLENODE":
                     toggleNode(user, Integer.parseInt(message[NODENUMBER]));
                     break;
+                case "TRANSMISSIONTAKEOVER":
+                    transmissionTakeover(user, Integer.parseInt(message[NODENUMBER]));
+                    break;
                 default:
                     break;
+
             }
         }
     }
@@ -426,6 +430,16 @@ public class WebServer {
         ArtNetDirector.userMap.put(user.getIp(), user);
     }
 
+    //turns off transmit for everyone else except the user
+    private void transmissionTakeover(User user, int nodeNumber) {
+        user.setToggled(nodeNumber, true);
+        for (User val : ArtNetDirector.userMap.values()) {
+            if (!user.getIp().equals(val.getIp())) {
+                val.setToggled(nodeNumber, false);
+            }
+        }
+    }
+
     public void stop() {
         //notify all clients of shutdown
         sendUsers("SERVERSTOP");
@@ -461,7 +475,7 @@ public class WebServer {
         for (User user : ArtNetDirector.userMap.values()) {
             boolean connected = false;
             for (WsContext userContext : getUserContexts(user)) {
-                if(userContext.session.isOpen()) connected = true;
+                if (userContext.session.isOpen()) connected = true;
             }
             user.setConnected(connected);
         }

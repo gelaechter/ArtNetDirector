@@ -7,11 +7,12 @@ import Sockette from "sockette";
 // prevent everthing from being global
 export { };
 
-// put functions in scope, so ahtml can access them:
+// put functions in scope, so html can access them:
 (window as any).plusSlides = plusSlides;
 (window as any).toggleTransmit = toggleTransmit;
 (window as any).currentSlide = currentSlide;
 (window as any).setUserName = setUserName;
+(window as any).transmissionTakeover = transmissionTakeover;
 
 const ws = new Sockette("ws://" + location.hostname + ":" + location.port + "/users", {
     timeout: 200,
@@ -100,7 +101,8 @@ function updateNodes(nodes: any) {
             "<\/table>" +
             "<\/div>" +
             "<div class=\"footer\">" +
-            "<input type=\"button\" class=\"button\" value=\"" + utils.I18n.t("user.toggle_transmit") + "\" onclick=\"toggleTransmit(" + nodeNumber + ")\"\/>" +
+            "<input type=\"button\" style=\"margin: 6px\"class=\"button\" value=\"" + utils.I18n.t("user.toggle_transmit") + "\" onclick=\"toggleTransmit(" + nodeNumber + ")\"\/>" +
+            "<input type=\"button\" style=\"margin: 6px\"class=\"button\" value=\"" + utils.I18n.t("user.transmission_takeover") + "\" onclick=\"transmissionTakeover(" + nodeNumber + ")\"\/>" +
             "<\/div>" +
             "<\/div>";
 
@@ -163,6 +165,10 @@ function toggleTransmit(nodeNumber: number) {
     send(JSON.stringify(["TOGGLENODE", nodeNumber]));
 }
 
+function transmissionTakeover(nodeNumber: number){
+  send(JSON.stringify(["TRANSMISSIONTAKEOVER", nodeNumber]));
+}
+
 let sending = false;
 let timeout: number;
 
@@ -201,6 +207,7 @@ function removeIndicator(userNameCell: HTMLElement) {
     }
     console.log(sending);
 }
+
 
 
 

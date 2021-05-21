@@ -8,6 +8,7 @@
               no_available_nodes: "There currently are no available nodes.",
               transmitting_to_node: "Transmitting to node?",
               toggle_transmit: "Toggle transmit",
+              transmission_takeover: "Exclusive transmission",
               transmitting: "\uD83D\uDCE1 Transmitting",
               transmit_true: "\u2705 Packets will be transmitted",
               transmit_false: "\u274C Packets will not be transmitted"
@@ -95,6 +96,7 @@
             no_available_nodes: "Es sind momentan keine Knoten verfügbar.",
             transmitting_to_node: "Übertragung zum Knoten?",
             toggle_transmit: "Übertragung umschalten",
+            transmission_takeover: "Alleinige Übernahme",
             transmitting: "\uD83D\uDCE1 Sendet",
             transmit_true: "\u2705 Pakete werden übertragen",
             transmit_false: "\u274C Pakete werden nicht übertragen"
