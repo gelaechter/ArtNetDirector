@@ -11,7 +11,8 @@
               transmission_takeover: "Exclusive transmission",
               transmitting: "\uD83D\uDCE1 Transmitting",
               transmit_true: "\u2705 Packets will be transmitted",
-              transmit_false: "\u274C Packets will not be transmitted"
+              transmit_false: "\u274C Packets will not be transmitted",
+              help_url: "https://github.com/gelaechter/ArtNetDirector/wiki/User-interface"
             },
 
             admin: {
@@ -72,7 +73,9 @@
                 password_discrepancy: "\u2757️ The passwords do not match",
                 password_discrepancy_message: "The passwords entered do not match.\nThe password has not been changed.",
                 invalid_ip_address: "\u2757️ This IP address is invalid"
-              }
+              },
+
+              help_url: "https://github.com/gelaechter/ArtNetDirector/wiki/Admin-interface"
             },
 
             fallback: {
@@ -88,7 +91,8 @@
             ip_address: "IP address",
             no_connection: "Connection lost",
             no_connection_message: "Connection to the host server was lost.\nRefresh the site to try to reconnect.",
-            websocket_error: "A connection error occured"
+            websocket_error: "A connection error occured",
+            help: "Help"
         };
 
         Translations["de"] = {
@@ -99,7 +103,8 @@
             transmission_takeover: "Alleinige Übernahme",
             transmitting: "\uD83D\uDCE1 Sendet",
             transmit_true: "\u2705 Pakete werden übertragen",
-            transmit_false: "\u274C Pakete werden nicht übertragen"
+            transmit_false: "\u274C Pakete werden nicht übertragen",
+            help_url: "https://github.com/gelaechter/ArtNetDirector/wiki/De:User-interface"
           },
 
           admin: {
@@ -118,7 +123,8 @@
               ban: "Sperren",
               remove_user: "Nutzer trennen",
               ban_user: "Nutzer sperren",
-              unban_user: "Nutzer entsperren"
+              unban_user: "Nutzer entsperren",
+              help_url: "https://github.com/gelaechter/ArtNetDirector/wiki/De:Home",
             },
 
             file: {
@@ -160,7 +166,9 @@
               password_discrepancy: "\u2757️ Die Passwörter stimmen nicht überein",
               password_discrepancy_message: "Die eingegebenen Passwörter stimmen nicht überein.\nDas Passwort wurde nicht geändert.",
               invalid_ip_address: "\u2757️ Diese IP-Adresse ist ungültig"
-            }
+            },
+
+            help_url: "https://github.com/gelaechter/ArtNetDirector/wiki/De:Admin-interface"
           },
 
           fallback: {
@@ -175,7 +183,8 @@
           ip_address: "IP-Adresse",
           no_connection: "Verbindung verloren",
           no_connection_message: "Die Verbindung zum Server wurde verloren.\nAktualisiere die Seite um eine neue Verbindung aufzubauen.",
-          websocket_error: "Ein Verbindungsfehler ist aufgetreten"
+          websocket_error: "Ein Verbindungsfehler ist aufgetreten",
+          help: "Hilfe"
         };
 
         return Translations;

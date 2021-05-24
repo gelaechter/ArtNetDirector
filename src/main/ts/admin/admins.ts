@@ -21,6 +21,7 @@ export { };
 (window as any).toggleEdit = editUsername;
 (window as any).editNode = editNode;
 (window as any).unBanUser = unBanUser;
+(window as any).openHelp = openHelp;
 
 
 const ws = new Sockette("ws://" + location.hostname + ":" + location.port + "/administrators", {
@@ -373,6 +374,11 @@ function setLogNotification(showing: boolean) {
     } else {
         $("#logSpan").children("sup").remove();
     }
+}
+
+function openHelp() {
+  var url =  utils.I18n.t("admin.help_url");
+  window.open(url, '_blank');
 }
 
 //Slide stuff

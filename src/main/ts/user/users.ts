@@ -13,6 +13,7 @@ export { };
 (window as any).currentSlide = currentSlide;
 (window as any).setUserName = setUserName;
 (window as any).transmissionTakeover = transmissionTakeover;
+(window as any).openHelp = openHelp;
 
 const ws = new Sockette("ws://" + location.hostname + ":" + location.port + "/users", {
     timeout: 200,
@@ -165,8 +166,8 @@ function toggleTransmit(nodeNumber: number) {
     send(JSON.stringify(["TOGGLENODE", nodeNumber]));
 }
 
-function transmissionTakeover(nodeNumber: number){
-  send(JSON.stringify(["TRANSMISSIONTAKEOVER", nodeNumber]));
+function transmissionTakeover(nodeNumber: number) {
+    send(JSON.stringify(["TRANSMISSIONTAKEOVER", nodeNumber]));
 }
 
 let sending = false;
@@ -208,15 +209,16 @@ function removeIndicator(userNameCell: HTMLElement) {
     console.log(sending);
 }
 
-
-
-
-
 //returns true if a node is toggled for a user
 const isNodeToggled = function(user: any, number: number) {
     var toggledNodes = user["toggled"];
     return toggledNodes.includes(number);
 };
+
+function openHelp() {
+    var url = utils.I18n.t("user.help_url");
+    window.open(url, '_blank');
+}
 
 //Slide stuff
 var slideIndex: number = 1;
